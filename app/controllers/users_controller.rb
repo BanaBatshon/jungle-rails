@@ -4,10 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+   parameters = user_params
+   password_digest = BCrypt::Password.create parameters['password_confirmation']
+   new_user_object = {name: parameters['name'], email: parameters['email'], password_digest: password_digest}
+   @user = User.new(new_user_object)
 
   if @user.save
-    redirect_to root_path, flash[:notice] = "Account created successfully!"
+    redirect_to root_path, notice: "Account created successfully!"
   else
     flash.now.alert = "Error: coudn't create account. Please try again and make sure you are entering a valid email and password!"
     render :new
