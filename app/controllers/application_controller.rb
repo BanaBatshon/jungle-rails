@@ -3,6 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # Make the current_user method available to views
+  helper_method :current_user
+  
+  def current_user
+    # Look up the current user based on user_id in the session cookie:
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  
   private
 
   def cart
