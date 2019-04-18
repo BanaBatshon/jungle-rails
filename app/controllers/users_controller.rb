@@ -5,14 +5,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-  end
 
   if @user.save
-    redirect_to root_path, :notice: 'Account created successfully!'\
+    redirect_to root_path, flash[:notice] = "Account created successfully!"
   else
     flash.now.alert = "Error: coudn't create account. Please try again and make sure you are entering a valid email and password!"
-    render: new
-  end  
+    render :new
+  end
 end
 
 private
