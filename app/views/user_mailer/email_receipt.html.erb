@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for your orrder <%= @user.name %></h1>
+    <p>
+      Here is your order number for reference: <%= @user.order_id %>.<br>
+    </p>
+    <p>
+      Here is a list of the items in this order: <%= @user.order_id.itemList %>.
+    </p>
+    <p>We hope to see you shop with us again, have a great day!</p>
+  </body>
+</html>
