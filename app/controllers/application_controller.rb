@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     # Look up the current user based on user_id in the session cookie
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+  helper_method :current_user
 
     # Authroize method redirects user to login page if not logged in
   def authorize
@@ -41,5 +42,4 @@ class ApplicationController < ActionController::Base
     }
     cookies[:cart]
   end
-
 end
