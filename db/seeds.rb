@@ -43,7 +43,7 @@ cat1.products.create!({
   price: 64.99
 })
 
-cat1.products.create!({
+p1 = cat1.products.create!({
   name:  'Women\'s Zebra pants',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel2.jpg'),
@@ -51,7 +51,7 @@ cat1.products.create!({
   price: 124.99
 })
 
-cat1.products.create!({
+p2 = cat1.products.create!({
   name:  'Hipster Hat',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel3.jpg'),
@@ -135,22 +135,16 @@ cat3.products.create!({
 Review.create!({
   description: "Love this product!",
   rating: 5,
-  product_id: 2,
+  product_id: p1.id,
   user_id: 1
 })
 
 Review.create!({
   description: "WARNING: do not buy, will ruin life",
   rating: 1,
-  product_id: 10 ,
+  product_id: p2.id ,
   user_id: 2
 })
 
-Review.create!({
-  description: "Can't live without it, but people won't stop starring",
-  rating: 4,
-  product_id: 2 ,
-  user_id: 3
-})
 
 puts "DONE!"
