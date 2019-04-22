@@ -1,7 +1,9 @@
 <tr>
   <ul>
     <div>
-      <h4><%= review.user_id %></h4>
+      <% if review.description %>
+        <%= current_user.name %>
+      <% end %>
     </div>
     <div>
       <%= review.description%>
