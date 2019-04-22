@@ -41,8 +41,9 @@
         </p>
       <% end %>
     </div>
-    <div>
-      <% @product.reviews.each do |review| %>
+    <div class="reviews">
+      <h4>Reviews</h4>
+      <% @product.reviews.reverse_each do |review| %>
         <%= render 'reviews', review: review%>
       <% end %>
     </div>
