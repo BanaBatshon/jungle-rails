@@ -1,7 +1,7 @@
 <tr>
   <ul>
     <div>
-      <% if review.description %>
+      <% if review.description && current_user %>
         <%= current_user.name %>
       <% end %>
     </div>
