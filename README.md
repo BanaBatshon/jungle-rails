@@ -2,18 +2,24 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Getting Started
+1. git clone git@github.com:BanaBatshon/jungle-rails.git 
+2. cd into `jungle-rails/`
+3. Run `bundle install` to install dependencies
+4. Install rails `gem install rails` 
+5. start the server by running `bin/rails s -b 0.0.0.0`
+6. open http://localhost:3000 to check out the online store
 
-## Setup
+## Screenshots
+!["Screenshot of Admin menue"](https://github.com/BanaBatshon/jungle-rails/blob/master/app/imgs/Screen%20Shot%202019-04-22%20at%209.12.14%20AM.png)
 
-1. Fork & Clone
-2. Run `bundle install` to install dependencies
-3. Create `config/database.yml` by copying `config/database.example.yml`
-4. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-5. Run `bin/rake db:reset` to create, load and seed db
-6. Create .env file based on .env.example
-7. Sign up for a Stripe account
-8. Put Stripe (test) keys into appropriate .env vars
-9. Run `bin/rails s -b 0.0.0.0` to start the server
+!["Screenshot of new category page"](https://github.com/BanaBatshon/jungle-rails/blob/master/app/imgs/Screen%20Shot%202019-04-22%20at%209.12.30%20AM.png)
+
+!["Screenshot of add new review section"](https://github.com/BanaBatshon/jungle-rails/blob/master/app/imgs/Screen%20Shot%202019-04-22%20at%209.12.46%20AM.png)
+
+!["Screenshot of the reviews section"](https://github.com/BanaBatshon/jungle-rails/blob/master/app/imgs/Screen%20Shot%202019-04-22%20at%209.18.05%20AM.png)
+
+!["Screenshot of delete option after adding a new review"](https://github.com/BanaBatshon/jungle-rails/blob/master/app/imgs/Screen%20Shot%202019-04-22%20at%209.18.35%20AM.png)
 
 ## Stripe Testing
 
@@ -26,3 +32,10 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+* bcrypt (~> 3.1.7)
+* jbuilder (~> 2.0)
+* jquery-rails
+* pg
+* puma
+* rails (= 4.2.6)
+* stripe
