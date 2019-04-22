@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
    parameters = user_params
    password_digest = BCrypt::Password.create parameters['password_confirmation']
-   new_user_object = {name: parameters['name'], email: parameters['email'], password_digest: password_digest}
+   new_user_object = {name: parameters['name'], email: parameters['email'], password: parameters['password'], password_confirmation: parameters['password_confirmation'], password_digest: password_digest}
    @user = User.new(new_user_object)
 
   if @user.save
