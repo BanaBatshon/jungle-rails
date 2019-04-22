@@ -2,7 +2,7 @@
   <ul>
     <div>
       <% if current_user && review.description %>
-        <p>Name: <%= review.user_id %> </p>
+        <p>Name: <%= review.user.name %> </p>
       <% end %>
     </div>
     <div>
