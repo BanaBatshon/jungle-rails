@@ -31,8 +31,8 @@ RSpec.describe User, type: :model do
   describe '.authenticate_with_credentials' do
     it "saves the user to the session if the authentication was successful" do
       @user.save
-      user= User.authenticate_with_credentials('banabatshon@hotmail.com', 'bbbbb')
-      expect(@user).to_not be_nil
+      user= User.authenticate_with_credentials('banabatshon@hotmail.com', 'bbbbbb')
+      expect(user).to_not be_nil
     end
   end
 end
