@@ -23,6 +23,8 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:description, :rating)
   end
   def deny_access
-    redirect_to product_path(params[:product_id]), notice: "You must be logged in to leave a review!"
+    if !current_user
+      redirect_to product_path(params[:product_id]), notice: "You must be logged in to leave a review!"
+    end
   end
 end
