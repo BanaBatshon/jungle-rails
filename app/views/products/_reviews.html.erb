@@ -1,13 +1,19 @@
 <tr>
   <ul>
     <div>
-      <%= review.user_id %>
+      <% if current_user && review.description %>
+        <p>Name: <%= review.user_id %> </p>
+      <% end %>
     </div>
     <div>
-      <%= review.description%>
+      <% if current_user && review.description %>
+        <p>Description: <%= review.description%> </p>
+      <% end %>
     </div>
     <div>
-      <%= review.rating %>
+      <% if current_user && review.description %>
+        <p>Rating: <%= review.rating %> </p>
+      <% end %>
     </div>
   </ul>
 </tr>
