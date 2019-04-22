@@ -46,7 +46,10 @@
     <div class="reviews">
       <h4>Reviews</h4>
       <% @product.reviews.reverse_each do |review| %>
-        <%= render 'reviews', review: review%>
+        <%= render 'reviews', review: review %>
+        <% if current_user && current_user.id == review.user_id %>
+          <%= button_to "delete", product_review_path(product_id: @product.id, id: review.id), :method => :delete %>
+        <% end %>
       <% end %>
     </div>
   </article>
