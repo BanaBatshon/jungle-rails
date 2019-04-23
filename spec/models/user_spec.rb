@@ -35,12 +35,14 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_nil
     end
     it "loggs the user in even if they had spaces before or after the email" do
-      @user.email = "   banabatshon@hotmail.com"
-      expect(@user).to be_valid
+      @user.save
+      user= User.authenticate_with_credentials('   banabatshon@hotmail.com', 'bbbbbb')
+      expect(user).to_not be_nil
     end
     it "loggs the user in even if they entered an upper cased email" do
-      @user.email = "BanaBatshon@hotmail.com"
-      expect(@user).to be_valid
+      @user.save
+      user= User.authenticate_with_credentials('BanaBatshon@hotmail.com', 'bbbbbb')
+      expect(user).to_not be_nil
     end
   end
 end
